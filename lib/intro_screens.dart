@@ -36,6 +36,8 @@ class IntroScreens extends StatefulWidget {
   ///[double]
   final double footerRadius;
 
+  final double height;
+
   ///sets the viewport fraction of your controller
   ///[double]
   final double viewPortFraction;
@@ -85,6 +87,7 @@ class IntroScreens extends StatefulWidget {
   final ScrollPhysics physics;
 
   const IntroScreens({
+    this.height = .66,
     required this.slides,
     this.footerRadius = 12.0,
     this.footerGradients = const [],
@@ -242,7 +245,7 @@ class _IntroScreensState extends State<IntroScreens>
               bottom: 0,
               left: 0,
               right: 0,
-              top: MediaQuery.of(context).size.height * .66,
+              top: MediaQuery.of(context).size.height * widget.height,
               child: Container(
                 padding: widget.footerPadding,
                 decoration: BoxDecoration(
